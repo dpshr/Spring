@@ -8,8 +8,47 @@
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- 서버가 처음 실행될 때 생성될 bean 들을 정의 -->
 	
+	<!-- 
+		class 속성 : 어떤 클래스를 기반으로 객체를 생성할지 
+		id 속성 : bean 어떤 이름으로 부를지 
+		property 태그 : setter
+		name 속성: 어떤 필드에 값을 채울지 
+		value 속성 : 어떤 값을 채울지 
+		
+		Board board = new Board();
+		board.setTitle ("Spring Bean 만들기");
+	 -->
+	<bean id="board" class="com.smhrd.entity.Board">
+		<property name="title" value="Spring Bean 만들기"></property>
+	</bean>
 	
+	<!--  1. 데이터베이스 연결 정보를 가지고 있을 HikariConfig 객체 만들기  -->
+	<bean id="config" class="com.zaxxer.hikari.HikariConfig">
+		<!-- 어떤 Driver 쓰는지 -->
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+		<!-- 어떤 DB로 연결하는지 (URL) -->
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/com"></property>
+		<!-- DB id -->
+		<property name="username" value="root"></property>
+		<!-- DB pw-->
+		<property name="password" value="dbsdpshr11!"></property>
+	</bean>
+	<!-- 2. 저장된 정보를 가지고 DBCP(Datasource)만들기 -->
+	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
+		<!-- 생성자의 매개변수에 값을 집어 넣어줄건데 다른 bean가져와서 넣어줘야한다. -->
+		<!-- ref : 만들어져있는 다른 bean을 가져와서 쓸 때  -->
+		<constructor-arg ref="config"></constructor-arg>
+	</bean>
+	
+	<!-- 3. SqlsessionFactoryBean 생성 -->
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean" >
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<!-- 4. mapper에 들어있는 파일을 스캔 -->
+	<mybatis-spring:scan base-package="com.smhrd.mapper"/>
 	
 	
 	
