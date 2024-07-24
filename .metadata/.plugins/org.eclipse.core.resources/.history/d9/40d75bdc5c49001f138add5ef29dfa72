@@ -1,0 +1,31 @@
+package com.smhrd.web;
+
+import javax.servlet.RequestDispatcher;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+// Spring이 해당 파일을 POJO로 인식하기 위한 어노테이션
+@Controller
+public class BoardController {
+	
+//	사용자가 "/list"를 요청을 처리하고 list.jsp 보여주기
+	
+//	메소드를 만들어서 사용자의 요청을 처리
+//	@RequestMapping : URLMapping 지정
+//	"/list"라는 요청이 들어오면 list()
+	@RequestMapping("/list")
+	public String list(){
+//		view 선택(jsp파일로 이동)
+//		controller -> jsp : forward 
+//		controller -> controller : redirect
+		
+//		String url = "WEB-INF/views/list.jsp";
+//		RequestDispatcher rd= request.getRequestDispatcher(url);
+//		rd.forward(request,response);
+		
+		
+		return "list"; // 확장자를 제외한 jsp 파일의 이름 
+	}
+	
+}

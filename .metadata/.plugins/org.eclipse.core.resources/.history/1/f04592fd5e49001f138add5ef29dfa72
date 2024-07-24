@@ -1,0 +1,29 @@
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>목록 페이지</h1>
+	<%-- 1. 객체 바인딩 된 데이터 꺼내기 --%>
+	<% 
+	// 각 영역에 데이터가 저장될 때 Object 형태로 업캐스팅
+	// 그래서 꺼낼 때 다운캐스팅 해야한다!
+	ArrayList<String>list = (ArrayList<String>)request.getAttribute("list");
+	
+	%>
+	<%-- 2. jsp내에서 스크립트릿, 표현식은 최소화하는게 좋음
+		>> EL
+		${이름} : 바인딩 된 대상을 가져와서 html 요소 사이에 출력
+		
+	 --%>
+	 <h1>${text}</h1>
+	 
+	 
+	 
+</body>
+</html>
