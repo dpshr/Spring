@@ -41,15 +41,18 @@
 						<c:forEach var="board" items="${list}">
 						<tr>
 							<td>${board.idx}</td>
-							<td>${board.title}</td>
+							<td><a href="view?idx=${board.idx}">${board.title}</a></td>
 							<td>${board.writer}</td>
 							<td>${board.indate}</td>
 							<td>${board.count}</td>
+							<!-- 쿼리스트링 : url +?name=value -->
+							<!-- delete 요청을 받았을 때 해당 게시글을 삭제하고 다시 목록으로 돌아오는 기능 -->
+							<td><a href="delete?idx=${board.idx}">삭제</a></td>
 						</tr>
 						</c:forEach>
 					</tbody>
 				</table>
-
+				<a class="btn btn-sm btn-primary" href="goWrite">작성하러가기 </a>
 
 
 

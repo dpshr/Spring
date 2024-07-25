@@ -9,3 +9,7 @@
 0:0:0:0:0:0:0:1 - - [24/Jul/2024:11:28:56 +0900] "GET /LegacyTemplate/list HTTP/1.1" 200 822
 0:0:0:0:0:0:0:1 - - [24/Jul/2024:11:33:26 +0900] "GET /LegacyTemplate/list HTTP/1.1" 200 964
 0:0:0:0:0:0:0:1 - - [24/Jul/2024:11:33:36 +0900] "GET /LegacyTemplate/list HTTP/1.1" 200 964
+127.0.0.1 - - [24/Jul/2024:17:12:22 +0900] "GET / HTTP/1.1" 404 750
+0:0:0:0:0:0:0:1 - - [24/Jul/2024:17:12:22 +0900] "GET /LegacyTemplate/ HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [24/Jul/2024:17:12:26 +0900] "GET /LegacyTemplate/list HTTP/1.1" 200 1712
+0:0:0:0:0:0:0:1 - - [24/Jul/2024:17:19:50 +0900] "GET /LegacyTemplate/list HTTP/1.1" 200 1753

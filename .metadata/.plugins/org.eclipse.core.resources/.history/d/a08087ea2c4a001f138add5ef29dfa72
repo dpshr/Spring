@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.mapper.BoardMapper">
+
+
+	<!-- 1. 게시글 전체 조회 id 속성 : Mapper 와 DAO를 연결하는 키(필수) resultType 속성: 조회 결과를 
+		어떤 java 자료형에 옮겨 담을지 지정 parameterType 속성 : #{}로 지정된 바인드 변수를 채우기 위한 매개변수 정보 -->
+	<select id="boardList" resultType="com.smhrd.entity.Board">
+		select * from Board
+	</select>
+
+	<!-- 2. 게시물 작성 -->
+
+	<insert id="write" parameterType="com.smhrd.entity.Board">
+		insert into BOARD(title,writer,content)
+		values(
+			#{title},
+			#{writer},
+			#{content}
+		)
+	</insert>
+	
+	<!-- 3. 게시물 삭제 -->
+	<delete id="delete" parameterType="com.smhrd.entity.Board">
+		delete from Board where idx=#{idx}
+	</delete>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

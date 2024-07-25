@@ -42,8 +42,20 @@ public interface BoardMapper {
 //		// 4) 실행결과 리턴
 //		return list;
 //	}
-//	
 	
+	
+//	게시물 작성 메소드
+	public int write(Board board);
+	
+//	게시물 삭제 메소드
+	public int delete(int idx);
+	
+//	게시물 조회 메소드
+	public Board view(int idx);
+	
+//	게시물 수정 메소드
+
+	public int modify(Board board);
 	
 	
 	

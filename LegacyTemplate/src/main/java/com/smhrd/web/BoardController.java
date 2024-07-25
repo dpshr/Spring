@@ -1,9 +1,6 @@
 package com.smhrd.web;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -68,4 +65,73 @@ public class BoardController {
 		return "list"; // 확장자를 제외한 jsp 파일의 이름 
 	}
 	
+//	게시글 작성하러가기
+	@RequestMapping("/goWrite")
+	public String gowrite() {
+//		1. 사용자가 요청에 보낸 데이터를 수집-생략가능
+//		2. 기능 수행 - 생략가능
+//		3. view 선택 
+		
+		
+		return "write";
+	}
+	
+//	게시글 작성하기
+	@RequestMapping("/write")
+	public String write(Board board) {
+//		1. 데이터 수집
+//		String title = request.getParameter("title");
+//		String writer = request.getParameter("writer");
+//		String content = request.getParameter("content");
+
+//		메소드의 매개변수에 데이터를 받을 변수를 선언해두면 Spring이 알아서 데이터 수집 
+//		** input name  == 매개변수의 변수명 
+		
+		
+//		Board board = new Board();
+//		board.setTitle(title);
+//		board.setWriter(writer);
+//		board.setContent(content);
+//		2. 기능 수행
+		boardMapper.write(board);
+//		3. view 선택 
+//		redirect 방식을 이용해서 /list 다시 요청
+//		redirect:/를 앞에 붙이면 forword 이동 대신 
+//		redirect가 일어난다!
+		return "redirect:/list";
+	}
+	
+//	게시글 삭제
+	@RequestMapping("/delete")
+	public String delete(int idx) {
+		
+		boardMapper.delete(idx);
+		
+		
+		return "redirect:/list";
+	}
+	
+//	게시물 상세보기
+	@RequestMapping("/view")
+	public String view(int idx,Model model) {
+		
+		Board view = boardMapper.view(idx);
+		model.addAttribute("view",view);
+		
+//		view 선택
+//		view.jsp
+//		retrun "view";
+//		만약 void로 리턴타입을 지정했다면, URLMapping을 jsp파일로 
+//		
+		return "view";
+	}
+	
+	
+	@RequestMapping("/modify")
+	public String modify(Board board) {
+		
+		boardMapper.modify(board);
+		
+		return "redirect:/list";
+	}
 }
