@@ -54,10 +54,11 @@
 					<a class = "btn btn-success" href="list">게시물 목록</a>
 				</form>
 			</div>
-			
-			
-			
-			
 			<div class="card-footer">DCX기반 빅데이터 분석 서비스 개발자 과정</div>
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+   <script src="resources/js/count.js" type="text/javascript"></script>
+</body>
+</html>
+	

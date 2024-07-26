@@ -57,8 +57,10 @@ public interface BoardMapper {
 
 	public int modify(Board board);
 	
+//	게시물 조회수 
+	public int count(int idx);
 	
-	
-	
+//	게시물 검색
+	public List<Board>select(String selval);
 	
 }

@@ -26,9 +26,17 @@
 		<div class="card">
 			<div class="card-header">게시판</div>
 			<div class="card-body">
-
 				<table class="table table-bordered table-hover">
-					<thead>
+				<thead>
+					<tr>
+						<td colspan="4"><input type="text" class="form-control"
+							id="text">
+						</td>
+						<td>
+							<!-- button태그의 기본 type은 submit -->
+							<button type="button" class="btn btn-success" id="btn">검색</button>
+						</td>
+					</tr>
 						<tr>
 							<td>글번호</td>
 							<td>제목</td>
@@ -38,28 +46,30 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="board" items="${list}">
-						<tr>
-							<td>${board.idx}</td>
-							<td><a href="view?idx=${board.idx}">${board.title}</a></td>
-							<td>${board.writer}</td>
-							<td>${board.indate}</td>
-							<td>${board.count}</td>
-							<!-- 쿼리스트링 : url +?name=value -->
-							<!-- delete 요청을 받았을 때 해당 게시글을 삭제하고 다시 목록으로 돌아오는 기능 -->
-							<td><a href="delete?idx=${board.idx}">삭제</a></td>
-						</tr>
+						<c:forEach var="board" items="${list}" varStatus="num">
+							<tr>
+								<td>${num.index+1}</td>
+								<td><a href="view?idx=${board.idx}">${board.title}</a></td>
+								<td>${board.writer}</td>
+								<td>${board.indate}</td>
+								<td>${board.count}</td>
+								<!-- 쿼리스트링 : url +?name=value -->
+								<!-- delete 요청을 받았을 때 해당 게시글을 삭제하고 다시 목록으로 돌아오는 기능 -->
+								<td><a href="delete?idx=${board.idx}">삭제</a></td>
+							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
 				<a class="btn btn-sm btn-primary" href="goWrite">작성하러가기 </a>
 
-
-
-
-
-
 			</div>
 			<div class="card-footer">DCX기반 빅데이터 분석 서비스 개발자 과정</div>
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"
+		type="text/javascript"></script>
+	<script src="resources/js/count.js?idx=${board.idx}"
+		type="text/javascript"></script>
+	<script src="resources/js/select.js" type="text/javascript"></script>
+</body>
+</html>

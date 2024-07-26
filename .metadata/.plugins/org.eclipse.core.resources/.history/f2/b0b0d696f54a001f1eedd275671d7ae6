@@ -1,0 +1,27 @@
+package com.smhrd.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.smhrd.mapper.BoardMapper;
+
+@Controller
+public class BoardRestController {
+	
+	@Autowired
+	BoardMapper boardMapper;
+	
+	
+	@RequestMapping("/ajax01")
+	public String ajax01(int num1){
+//		비동기요청이 들어왔을 때 
+//		데이터 수집은 동일하게 진행
+		System.out.println("전송받은 데이터: " + num1);
+		
+		return "list";
+	}
+	
+	
+	
+}

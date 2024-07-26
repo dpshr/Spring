@@ -1,6 +1,8 @@
 package com.smhrd.web;
 
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -38,8 +40,6 @@ public class BoardController {
 //		게시글 목록 데이터
 		ArrayList<Board> list = (ArrayList<Board>) boardMapper.boardList();
 		
-		
-		
 //		위 데이터를 list.jsp로 이동하려면?
 		
 //		객체 바인딩 
@@ -52,7 +52,6 @@ public class BoardController {
 //		Model: 다이어트한 request, 객체 바인딩 기능만 남긴 request
 //		request 영역에 저장되기 때문에 꺼낼 때 request에서 꺼내야함!
 		model.addAttribute("list",list);
-		
 //		view 선택(jsp파일로 이동)
 //		controller -> jsp : forward 
 //		controller -> controller : redirect
@@ -134,4 +133,7 @@ public class BoardController {
 		
 		return "redirect:/list";
 	}
+	
+	
+	
 }
