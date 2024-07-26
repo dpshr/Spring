@@ -9149,3 +9149,4 @@ org.eclipse.core.runtime.CoreException: Launch configuration lab201-ioc-tutor re
 2024-07-26 18:37:15,951 [Worker-208: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2024-07-26 18:37:15,952 [Worker-208: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eGovFrame-4.0.0\workspace.edu\LegacyTemplate\src\main\resources
 2024-07-26 18:37:15,953 [Worker-208: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-07-26 18:37:15,953 [Worker-208: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\eGovFrame-4.0.0\workspace.edu\LegacyTemplate\src\test\resources
