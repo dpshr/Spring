@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="HikariDataSource"/>
+		<item key="selection" value="th"/>
 		<list key="findhistory">
+			<item value="thymeleaf"/>
+			<item value="th"/>
+			<item value="thym"/>
 			<item value="HikariDataSource"/>
 			<item value="/Users/EGOVEDU/eGovFrame-3.10.0/"/>
 		</list>
